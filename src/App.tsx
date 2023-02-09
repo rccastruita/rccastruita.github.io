@@ -10,7 +10,6 @@ import Main from './components/Main';
 const App = () => {
   const [language, setLanguage] = useState('en');
 
-
   return (
     <LanguageContext.Provider value={language as LanguageKey} >
       <LanguageSetterContext.Provider value={setLanguage} >

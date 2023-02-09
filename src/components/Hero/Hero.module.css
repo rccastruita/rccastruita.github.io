@@ -1,0 +1,29 @@
+.hero {
+  height: 100vh;
+  background: 
+    linear-gradient(
+      to bottom right, 
+      var(--clr-primary-400), 35%,
+      var(--clr-accent-clear-400)
+    )
+}
+
+.title {
+  font-family: var(--fnt-family-primary);
+  color: var(--clr-text-heading);
+  font-size: min(15vmin, 4rem);
+  font-weight: 400;
+  position: absolute;
+  top: 8%;
+  left: 6%;
+}
+
+.subtitle {
+  color: var(--clr-text-heading);
+  position: absolute;
+  top: 40%;
+  font-size: 5vmin;
+  max-width: 15ch;
+  right: 6%;
+  text-align: right;
+}
