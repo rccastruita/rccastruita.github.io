@@ -1,0 +1,15 @@
+.button {
+  border: none;
+  border-radius: 100px;
+  
+  padding: 1rem;
+  background-color: var(--clr-primary-800);
+  color: var(--clr-text-heading);
+  
+  font-size: 1.5rem;
+}
+
+.button--white {
+  background-color: var(--clr-text-heading);
+  color: var(--clr-primary-900);
+}

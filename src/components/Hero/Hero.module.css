@@ -23,7 +23,23 @@
   position: absolute;
   top: 40%;
   font-size: 5vmin;
-  max-width: 15ch;
+  /*max-width: 15ch;*/
   right: 6%;
   text-align: right;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 15rem;
+  height: 10rem;
+
+  position: absolute;
+  margin: auto;
+  bottom: 12vh;
+  left: 0;
+  right: 0;
+
 }

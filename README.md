@@ -1,4 +1,5 @@
 # TODO
+- [ ] Add LocalizedText component
 - [ ] Add Hero background animation
 - [ ] Add navbar with options menu
 - [ ] Everything else
