@@ -9,9 +9,14 @@
   --clr-primary-800: hsl(228 100% 22%);
   --clr-primary-900: hsl(228 100% 15%);
   
-  --clr-secondary-400: hsl(347 82% 48%);
+  /*--clr-secondary-400: hsl(347 82% 48%);*/
+  --clr-secondary-400: hsl(347 85% 45%);
   --clr-accent-400: hsl(258 100% 44%);
   --clr-accent-clear-400: hsl(198 100% 44%);
+
+  /*--clr-nav-primary: hsl(0 0% 30%);*/
+  --clr-nav-primary: var(--clr-secondary-400);
+  --clr-nav-secondary: white;
 
   --clr-text-heading: hsl(45 100% 100%);
   --clr-text-primary: black;

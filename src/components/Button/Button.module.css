@@ -13,3 +13,8 @@
   background-color: var(--clr-text-heading);
   color: var(--clr-primary-900);
 }
+
+.button--secondary {
+  background-color: var(--clr-secondary-400);
+  
+}
