@@ -13,7 +13,7 @@
 }
 
 .navigation.navigation--hidden {
-  bottom: calc(-1 * (2*var(--nav-padding) + var(--nav-fnt-sz) + 2*var(--nav-border-width)));
+  bottom: calc(-1 * (2*var(--nav-padding) + var(--nav-fnt-sz) + 2*var(--nav-border-width) + 2px));
   opacity: 0;
   visibility: hidden;
 }
@@ -29,9 +29,17 @@
   padding: 0;
 }
 
+.navigation .navigation__span {
+  background-color: white;
+  flex-shrink: 1;
+  flex-basis: fill;
+  flex-grow: 1;
+}
+
 .navigation li {
   color: var(--clr-nav-secondary);
   padding: 1rem;
+  flex-shrink: 0;
 }
 
 .navigation li:active {
@@ -62,14 +70,12 @@
 
   display: flex;
   width: 3rem;
-
-  display: none;
+  flex-shrink: 0;
 }
 
 .burger-menu span {
   color: black;
   padding: 0rem;
   margin: auto;
-  /*font-size: 1.9rem;*/
-  font-size: 4rem;
+  font-size: 1.9rem;
 }

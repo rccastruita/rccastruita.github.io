@@ -1,21 +1,29 @@
-import React from "react";
+import React, { TouchEventHandler, WheelEventHandler } from "react";
+
+type NavEventsTuple = [WheelEventHandler, TouchEventHandler, TouchEventHandler];
 
 const useNavScrollEvents = (
   lastY: number,
   setLastY: React.Dispatch<React.SetStateAction<number>>,
   hideNav: boolean,
   setHideNav: React.Dispatch<React.SetStateAction<boolean>>
-) => {
+): NavEventsTuple => {
   const handleTouchMove = (e: React.TouchEvent) => {
-    const MIN_SCROLL = 5;
+    const MIN_SCROLL = 50;
     
     const newY = e.changedTouches.item(0)?.screenY ?? -100;
 
     if (newY < 0)
       return;
 
-    console.log(`onTouchMove: ${lastY}`);
     const dY = newY - lastY;
+
+    if(dY > MIN_SCROLL && !hideNav) {
+      setLastY(newY);
+    }
+    else if (dY < -MIN_SCROLL && hideNav) {
+      setLastY(newY);
+    }
 
     if(dY > MIN_SCROLL && hideNav) {
       setHideNav(false);
@@ -38,7 +46,6 @@ const useNavScrollEvents = (
   }
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    console.log('onTouchStart');
     setLastY(e.changedTouches.item(0)?.screenY ?? 0);
   }
 

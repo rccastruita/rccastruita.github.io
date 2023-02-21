@@ -13,6 +13,7 @@ const Navbar = ({hide}: NavProps) => {
         <li>About me</li>
         <li>My work</li>
         <li>Contact</li>
+        <li className={styles.navigation__span}>.</li>
         <li className={styles['burger-menu']}>
           <span className="material-symbols-outlined">
             menu
