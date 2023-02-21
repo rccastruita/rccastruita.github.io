@@ -39,20 +39,27 @@ const Main = () => {
       setHideNav(false);
   }
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    console.log('onTouchStart');
+    setLastY(e.changedTouches.item(0)?.screenY ?? 0);
+  }
+
   return (
     <div
       onTouchMove={handleTouchMove}
       onWheel={handleWheel}
-      onTouchStart={e => setLastY(e.changedTouches.item(0)?.screenY ?? 0)}
+      onTouchStart={handleTouchStart}
     >
       <Hero />
       <Navbar hide={hideNav} />
       <div>
         <p>{lastY}</p>
       </div>
-      <Section title="About">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod dolor soluta dicta asperiores praesentium consectetur sit placeat sed necessitatibus recusandae in nulla optio animi at dolore, tempora quisquam quae.
-      </Section>
+      <main>
+        <Section title="About">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod dolor soluta dicta asperiores praesentium consectetur sit placeat sed necessitatibus recusandae in nulla optio animi at dolore, tempora quisquam quae.
+        </Section>
+      </main>
     </div>
   );
 };
