@@ -11,8 +11,12 @@
   
   /*--clr-secondary-400: hsl(347 82% 48%);*/
   --clr-secondary-400: hsl(347 85% 45%);
+  --clr-secondary-200: hsl(347 85% 55%);
+
   --clr-accent-400: hsl(258 100% 44%);
   --clr-accent-clear-400: hsl(198 100% 44%);
+
+  --clr-neutral-600: hsl(0 0% 30%);
 
   /*--clr-nav-primary: hsl(0 0% 30%);*/
   --clr-nav-primary: var(--clr-secondary-400);

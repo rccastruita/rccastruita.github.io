@@ -21,13 +21,13 @@ const Main = () => {
       onTouchStart={handleTouchStart}
     >
       <Hero />
-      <Navbar hide={hideNav} />
-      <div>
-        <p>{lastY}</p>
-      </div>
+      <Navbar hide={false} />
       <main>
         <Section title="About">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod dolor soluta dicta asperiores praesentium consectetur sit placeat sed necessitatibus recusandae in nulla optio animi at dolore, tempora quisquam quae.
+        </Section>
+        <Section title="Contact">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio odio dolor non. Alias cumque ducimus pariatur blanditiis quisquam eaque sapiente facilis, inventore laboriosam corporis tenetur dolor nulla magnam quibusdam optio?
         </Section>
       </main>
     </div>
