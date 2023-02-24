@@ -21,7 +21,7 @@ const Main = () => {
       onTouchStart={handleTouchStart}
     >
       <Hero />
-      <Navbar hide={false} />
+      <Navbar hide={hideNav} />
       <main>
         <Section title="About">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod dolor soluta dicta asperiores praesentium consectetur sit placeat sed necessitatibus recusandae in nulla optio animi at dolore, tempora quisquam quae.

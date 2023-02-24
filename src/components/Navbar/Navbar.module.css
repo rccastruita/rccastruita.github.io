@@ -15,7 +15,6 @@
 .navigation.navigation--hidden {
   bottom: calc(-1 * (2*var(--nav-padding) + var(--nav-fnt-sz) + 2*var(--nav-border-width) + 2px));
   opacity: 0;
-  visibility: hidden;
 }
 
 .navigation ul {

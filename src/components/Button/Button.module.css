@@ -18,3 +18,13 @@
   background-color: var(--clr-secondary-400);
   
 }
+
+@media(hover:hover) {
+  .button:hover {
+    cursor: pointer;
+  }
+
+  .button--basic-hover:hover {
+    filter: brightness(1.5);
+  }
+}

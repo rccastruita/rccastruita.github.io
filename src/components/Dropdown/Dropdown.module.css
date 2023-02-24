@@ -1,5 +1,5 @@
 .dropdown {
-  --dropdown-duration: 0.9s;
+  --dropdown-duration: 0.3s;
 
   position: absolute;
   
@@ -12,6 +12,10 @@
 .dropdown__ul {
   display: flex;
   flex-direction: column;
+}
+
+.dropdown--first {
+  visibility: hidden;
 }
 
 .dropdown--top {
@@ -36,11 +40,11 @@
 }
 
 .dropdown.dropdown--active {
-  animation: forwards var(--dropdown-duration) show_dropdown linear;
+  animation: forwards var(--dropdown-duration) show_dropdown linear !important;
 }
 
 .dropdown.dropdown--hidden {
-  animation: forwards var(--dropdown-duration) hide_dropdown ease-in;
+  animation: forwards var(--dropdown-duration) hide_dropdown ease-in !important;
 }
 
 .dropdown-item {

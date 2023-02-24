@@ -1,4 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
+
+import Button from '../Button';
 
 import styles from './Dropdown.module.css';
 
@@ -12,12 +14,22 @@ type DropdownProps = {
 };
 
 const Dropdown = ({children, className, active, top, left}: DropdownProps) => {
+  const [first, setFirst] = useState(true);
+
+  useEffect(() => {
+    if (first && active)
+      setFirst(false);
+  }, [active]);
+
   const positionBlock = top ? styles['dropdown--top'] : styles['dropdown--bottom'];
   const positionInline = left ? styles['dropdown--left'] : styles['dropdown--right'];
 
   const position = `${positionBlock} ${positionInline}`;
 
-  const state = active ? styles['dropdown--active'] : styles['dropdown--hidden'];
+  //const state = active ? styles['dropdown--active'] : styles['dropdown--hidden'];
+
+  const state = first ? styles['dropdown--first']
+    : active ? styles['dropdown--active'] : styles['dropdown--hidden'];
 
   return (
     <div className={`${styles.dropdown} ${state} ${position} ${className}`}>
@@ -28,10 +40,20 @@ const Dropdown = ({children, className, active, top, left}: DropdownProps) => {
   )
 };
 
-type ItemProps = {
+type ButtonProps = { children: ReactNode; };
+
+export const DropdownButton = ({ children }: ButtonProps) => {
+  return (
+    <Button>
+      {children}
+    </Button>
+  );
+  }
+
+  type ItemProps = {
   children: ReactNode;
 };
-
+  
 export const DropdownItem = ({children}: ItemProps) => {
   return (
     <li className={styles['dropdown-item']}>
