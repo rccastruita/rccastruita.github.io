@@ -13,12 +13,14 @@
   --clr-secondary-400: hsl(347 85% 45%);
   --clr-secondary-200: hsl(347 85% 55%);
 
-  --clr-accent-400: hsl(258 100% 44%);
-  --clr-accent-clear-400: hsl(198 100% 44%);
+  --clr-tertiary-400: hsl(258 100% 44%);
+  --clr-tertiary-clear-400: hsl(198 100% 44%);
 
   --clr-neutral-600: hsl(0 0% 30%);
 
   /*--clr-nav-primary: hsl(0 0% 30%);*/
+  --clr-accent-400: white;
+
   --clr-nav-primary: var(--clr-secondary-400);
   --clr-nav-secondary: white;
 
@@ -26,6 +28,10 @@
   --clr-text-primary: black;
 
   --fnt-family-primary: 'Inter', sans-serif;
+
+  --tm-button-transition: 100ms;
+
+  --sz-outline-width: 3px;
 }
 
 * {

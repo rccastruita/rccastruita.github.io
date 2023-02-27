@@ -7,6 +7,13 @@
   color: var(--clr-text-heading);
   
   font-size: 1.5rem;
+
+  transition-duration: var(--tm-button-transition);
+
+  outline-style: solid;
+  outline-color: var(--clr-accent-400);
+  outline-offset: 0;
+  outline-width: 0;
 }
 
 .button--white {
@@ -19,12 +26,12 @@
   
 }
 
-@media(hover:hover) {
-  .button:hover {
-    cursor: pointer;
-  }
+.button:hover {
+  cursor: pointer;
+}
 
-  .button--basic-hover:hover {
-    filter: brightness(1.5);
-  }
+.button:focus-visible,
+.button:hover {
+  outline-width: var(--sz-outline-width);
+  outline-offset: var(--sz-outline-width);
 }

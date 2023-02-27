@@ -4,7 +4,7 @@
     linear-gradient(
       to bottom right, 
       var(--clr-primary-400), 35%,
-      var(--clr-accent-clear-400)
+      var(--clr-tertiary-clear-400)
     )
 }
 
