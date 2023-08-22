@@ -26,10 +26,6 @@
   
 }
 
-.button:hover {
-  cursor: pointer;
-}
-
 .button:focus-visible,
 .button:hover {
   outline-width: var(--sz-outline-width);

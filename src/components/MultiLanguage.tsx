@@ -11,9 +11,9 @@ type MLProps = {
 const MultiLanguage = ({language, children}: MLProps) => {
   const [lan] = useLanguage();
 
-  return lan !== language ? null : (
+  return lan === language ? (
     <>{children}</>
-  );
+  ) : null;
 };
 
 export default MultiLanguage;

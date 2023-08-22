@@ -1,6 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 
-import Dropdown, { DropdownItem, DropdownButton, DropdownStatus } from '../Dropdown';
+import useLanguage from '../../hooks/useLanguage';
+import Collapse, { CollapseContent, CollapseTitle } from '../Collapse';
+import Dropdown, { 
+  DropdownItem, DropdownStatus, DropdownAnchor, DropdownButton
+} from '../Dropdown';
+import ML from '../MultiLanguage';
+
+import { LanguageKey } from '../../types';
 
 import styles from './Navbar.module.css';
 
@@ -10,9 +17,10 @@ type NavProps = {
 
 const Navbar = ({hide}: NavProps) => {
   const [dropdownStatus, setDropdownStatus] = useState(DropdownStatus.Hidden);
+  const [currentLanguage, setLanguage] = useLanguage();
 
   useEffect(() => {
-    // Hide the dropdown menu while showing the nav
+    // Hide the dropdown menu when showing the nav
     // if it was visible when the nav was hidden
     if (!hide && dropdownStatus === DropdownStatus.Active) {
       setDropdownStatus(DropdownStatus.Hidden);
@@ -31,6 +39,13 @@ const Navbar = ({hide}: NavProps) => {
     }
   };
 
+  const changeLanguage = (key: LanguageKey) => {
+    if( key !== currentLanguage ) {
+      console.log(`changing language to "${key}" ...`);
+      setLanguage(key);
+    }
+  };
+
   const menuActive = dropdownStatus !== DropdownStatus.Active 
     ? styles['navigation__menu--hidden'] : null;
 
@@ -39,30 +54,94 @@ const Navbar = ({hide}: NavProps) => {
       className={`${styles.navigation} ${ hide && styles['navigation--hidden']}`}
     >
       <ul>
-        <li>About me</li>
-        <li>My work</li>
-        <li>Contact</li>
+        <li>
+          <ML language="en">
+            About me
+          </ML>
+          <ML language="es">
+            Sobre mí
+          </ML>
+        </li>
+        <li>
+          <ML language="en">
+            My work
+          </ML>
+          <ML language="es">
+            Mis trabajos
+          </ML>
+        </li>
+        <li>
+          <ML language="en">
+            Contact
+          </ML>
+          <ML language="es">
+            Contacto
+          </ML>
+        </li>
         <li className={styles.navigation__span}></li>
         <li className={`${styles.navigation__menu} ${menuActive}`}>
-          <DropdownButton status={dropdownStatus}
-            onClick={handleMenuClick}
-          >
+          <NavButton onClick={handleMenuClick}>
             <span className="material-symbols-outlined">
-              { // TODO: Animate change
+              { // TODO: Animate toggle
                 dropdownStatus === DropdownStatus.Active ? 'close' : 'menu'
               }
             </span>
-          </DropdownButton>
+          </NavButton>
           <Dropdown top left status={dropdownStatus}>
-            <DropdownItem>About me</DropdownItem>
-            <DropdownItem>My work</DropdownItem>
-            <DropdownItem>Contact</DropdownItem>
-            <DropdownItem>Language</DropdownItem>
-            <DropdownItem>Theme</DropdownItem>
+            <DropdownAnchor>
+              <ML language="en">About me</ML>
+              <ML language="es">Sobre mí</ML>
+            </DropdownAnchor>
+            <DropdownAnchor>
+              <ML language="en">My work</ML>
+              <ML language="es">Mis trabajos</ML>
+            </DropdownAnchor>
+            <DropdownAnchor>
+              <ML language="en">Contact</ML>
+              <ML language="es">Contacto</ML>
+            </DropdownAnchor>
+
+            <DropdownItem> {/* Language menu */}
+              <Collapse>
+                <CollapseTitle>
+                  <ML language="en">Language</ML>
+                  <ML language="es">Idioma</ML>
+                </CollapseTitle>
+                <CollapseContent>
+                  <DropdownButton onClick={() => changeLanguage('en')}>
+                    <ML language="en">English</ML>
+                    <ML language="es">Inglés</ML>
+                  </DropdownButton>
+                  <DropdownButton onClick={() => changeLanguage('es')}>
+                    <ML language="en">Spanish</ML>
+                    <ML language="es">Español</ML>
+                  </DropdownButton>
+                </CollapseContent>
+              </Collapse>
+            </DropdownItem> {/* -------- Language Menu */}
+
+
+            <DropdownItem>
+              <ML language="en">Theme</ML>
+              <ML language="es">Tema</ML>
+            </DropdownItem>
           </Dropdown>
         </li>
       </ul>
     </nav>
+  );
+};
+
+type NavButtonProps = {
+  children: ReactNode;
+  onClick: () => void;
+};
+
+const NavButton = ({ children, onClick }: NavButtonProps) => {
+  return (
+    <button className={styles['nav-button']} onClick={onClick}>
+      {children}
+    </button>
   );
 };
 

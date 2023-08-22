@@ -1,0 +1,13 @@
+.collapse-title {
+  padding: var(--sz-menu-padding);
+  cursor: pointer;
+}
+
+/* TODO: add style */
+.collapse {
+
+}
+
+.collapse-content {
+
+}

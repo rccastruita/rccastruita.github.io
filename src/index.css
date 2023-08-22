@@ -32,6 +32,8 @@
   --tm-button-transition: 100ms;
 
   --sz-outline-width: 3px;
+  --sz-menu-padding: 1rem;
+  --sz-menu-item-height: 3rem;
 }
 
 * {
@@ -39,6 +41,10 @@
   margin: 0;
 
   font-family: var(--fnt-family-primary);
+}
+
+a:hover, button:hover {
+  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, h6 {

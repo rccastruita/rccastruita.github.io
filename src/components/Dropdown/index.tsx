@@ -6,7 +6,7 @@ export enum DropdownStatus {
   Hidden,
   Active,
   ToggledOff
-}
+} 
 
 type DropdownProps = {
   children: ReactNode;
@@ -39,7 +39,7 @@ const Dropdown = ({status, children, className, top, left}: DropdownProps) => {
 
   return (
     <div className={`${styles.dropdown} ${stateClass} ${position} ${className}`}>
-      <ul className={styles.dropdown__ul}>
+      <ul>
         {children}
       </ul>
     </div>
@@ -48,31 +48,43 @@ const Dropdown = ({status, children, className, top, left}: DropdownProps) => {
 
 type ButtonProps = {
   children: ReactNode;
-  status: DropdownStatus;
   onClick: () => void;
 };
 
-export const DropdownButton = ({ children, status, onClick }: ButtonProps) => {
-  const classNames = 
-    `${styles['dropdown-button']} ${status === DropdownStatus.ToggledOff && styles['dropdown-button--toggled']}`;
-
+export const DropdownButton = ({ children, onClick }: ButtonProps) => {
   return (
-    <button className={classNames}
-      onClick={onClick}
-    >
-      {children}
-    </button>
+    <li className={styles['dropdown-button']}>
+      <button onClick={onClick}>
+        {children}
+      </button>
+    </li>
+  )
+};
+
+type AnchorProps = {
+  children: ReactNode;
+};
+
+export const DropdownAnchor = ({ children }: AnchorProps) => {
+  return (
+    <li className={`${styles['dropdown-item']} ${styles['dropdown-anchor']}`}>
+      <a>{children}</a>
+    </li>
   )
 };
 
 type ItemProps = {
   children: ReactNode;
+  button?: boolean;
+  anchor?: boolean;
 };
-  
-export const DropdownItem = ({children}: ItemProps) => {
+
+/* TODO: decide if implement unified component */
+export const DropdownItem = ({children, button}: ItemProps) => {
+  const modificator = button ? styles['dropdown-item--button'] : null;
   return (
-    <li className={styles['dropdown-item']}>
-      <div className={styles['dropdown-item__content']}>{children}</div>
+    <li className={`${styles['dropdown-item']} ${modificator}`}>
+      {children}
     </li>
   );
 };
