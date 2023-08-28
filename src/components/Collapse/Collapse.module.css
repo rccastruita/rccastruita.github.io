@@ -1,6 +1,8 @@
 .collapse-title {
+  all: unset;
   padding: var(--sz-menu-padding);
-  cursor: pointer;
+  
+  width: 100%;
 }
 
 /* TODO: add style */
@@ -9,5 +11,10 @@
 }
 
 .collapse-content {
+  transition-duration: 500ms;
+  background-color: var(--clr-secondary-600);
+}
 
+.collapse-content--hidden {
+  max-height: 0 !important;
 }

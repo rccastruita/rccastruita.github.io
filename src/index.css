@@ -10,6 +10,7 @@
   --clr-primary-900: hsl(228 100% 15%);
   
   /*--clr-secondary-400: hsl(347 82% 48%);*/
+  --clr-secondary-600: hsl(347 95% 65%);
   --clr-secondary-400: hsl(347 85% 45%);
   --clr-secondary-200: hsl(347 85% 55%);
 
@@ -17,6 +18,7 @@
   --clr-tertiary-clear-400: hsl(198 100% 44%);
 
   --clr-neutral-600: hsl(0 0% 30%);
+  --clr-neutral-600: #4d4d4d;
 
   /*--clr-nav-primary: hsl(0 0% 30%);*/
   --clr-accent-400: white;
@@ -37,14 +39,14 @@
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   margin: 0;
 
   font-family: var(--fnt-family-primary);
 }
 
-a:hover, button:hover {
-  cursor: pointer;
+a, button {
+  cursor: pointer !important;
 }
 
 h1, h2, h3, h4, h5, h6 {

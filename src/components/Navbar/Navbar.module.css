@@ -41,7 +41,7 @@
   overflow: hidden;
 }
 
-/* TODO: Remove hover and active behavior and make the items anchors */
+/* TODO: Fix hover and active behavior and make the items anchors */
 .navigation li:not(.navigation__span):not(.navigation__menu):active {
   background-color: white;
   color: var(--clr-nav-primary);

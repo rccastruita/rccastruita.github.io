@@ -1,6 +1,10 @@
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 import styles from "./Collapse.module.css";
+
+type CollapseProps = {
+  children: ReactNode
+};
 
 const Collapse = ( {children}: CollapseProps ) => {
   return (
@@ -10,21 +14,34 @@ const Collapse = ( {children}: CollapseProps ) => {
   );
 };
 
-type CollapseProps = {
-  children: ReactNode
-}
+type CollapseTitleProps = {
+  children: ReactNode;
+  onClick: MouseEventHandler;
+};
 
-export const CollapseTitle = ( {children}: CollapseProps ) => {
+export const CollapseTitle = ( {children, onClick}: CollapseTitleProps ) => {
   return (
-    <div className={styles['collapse-title']}>
+    <button className={styles['collapse-title']} onClick={onClick}>
       {children}
-    </div>
+    </button>
   )
 };
 
-export const CollapseContent = ( {children}: CollapseProps ) => {
+type CollapseContentProps = {
+  children: ReactNode;
+  maxHeight?: string;
+  hidden?: boolean;
+};
+
+export const CollapseContent = ( {children, maxHeight, hidden}: CollapseContentProps ) => {
+  const style = maxHeight ? {
+    maxHeight
+  } : {};
+
   return (
-    <div className={styles['collapse-content']}>
+    <div className={`${styles['collapse-content']} ${hidden && styles['collapse-content--hidden']}`}
+      style={style}
+    >
       {children}
     </div>
   )

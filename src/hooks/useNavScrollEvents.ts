@@ -1,6 +1,11 @@
-import React, { TouchEventHandler, WheelEventHandler } from "react";
+import React, { KeyboardEventHandler, TouchEventHandler, WheelEventHandler } from "react";
 
-type NavEventsTuple = [WheelEventHandler, TouchEventHandler, TouchEventHandler];
+type NavEventsTuple = [
+  WheelEventHandler, 
+  TouchEventHandler, 
+  TouchEventHandler,
+  (e: KeyboardEvent) => void
+];
 
 const useNavScrollEvents = (
   lastY: number,
@@ -49,7 +54,15 @@ const useNavScrollEvents = (
     setLastY(e.changedTouches.item(0)?.screenY ?? 0);
   }
 
-  return [handleWheel, handleTouchStart, handleTouchMove];
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (['ArrowDown', 'PageDown', 'End'].includes(e.key)) {
+      setHideNav(true);
+    } else if (['ArrowUp', 'PageUp', 'Home'].includes(e.key)) {
+      setHideNav(false);
+    }
+  };
+
+  return [handleWheel, handleTouchStart, handleTouchMove, handleKeyDown];
 };
 
 export default useNavScrollEvents;

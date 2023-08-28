@@ -18,6 +18,7 @@ type NavProps = {
 const Navbar = ({hide}: NavProps) => {
   const [dropdownStatus, setDropdownStatus] = useState(DropdownStatus.Hidden);
   const [currentLanguage, setLanguage] = useLanguage();
+  const [languageCollapsed, setLanguageCollapsed] = useState(true);
 
   useEffect(() => {
     // Hide the dropdown menu when showing the nav
@@ -41,9 +42,12 @@ const Navbar = ({hide}: NavProps) => {
 
   const changeLanguage = (key: LanguageKey) => {
     if( key !== currentLanguage ) {
-      console.log(`changing language to "${key}" ...`);
       setLanguage(key);
     }
+  };
+
+  const toggleLanguageCollapsed = () => {
+    setLanguageCollapsed(!languageCollapsed);
   };
 
   const menuActive = dropdownStatus !== DropdownStatus.Active 
@@ -93,8 +97,8 @@ const Navbar = ({hide}: NavProps) => {
               <ML language="es">Sobre mí</ML>
             </DropdownAnchor>
             <DropdownAnchor>
-              <ML language="en">My work</ML>
-              <ML language="es">Mis trabajos</ML>
+              <ML language="en">Skills</ML>
+              <ML language="es">Skills</ML>
             </DropdownAnchor>
             <DropdownAnchor>
               <ML language="en">Contact</ML>
@@ -103,11 +107,11 @@ const Navbar = ({hide}: NavProps) => {
 
             <DropdownItem> {/* Language menu */}
               <Collapse>
-                <CollapseTitle>
+                <CollapseTitle onClick={toggleLanguageCollapsed}>
                   <ML language="en">Language</ML>
                   <ML language="es">Idioma</ML>
                 </CollapseTitle>
-                <CollapseContent>
+                <CollapseContent maxHeight="7rem" hidden={languageCollapsed}>
                   <DropdownButton onClick={() => changeLanguage('en')}>
                     <ML language="en">English</ML>
                     <ML language="es">Inglés</ML>
@@ -122,8 +126,13 @@ const Navbar = ({hide}: NavProps) => {
 
 
             <DropdownItem>
-              <ML language="en">Theme</ML>
-              <ML language="es">Tema</ML>
+              <Collapse>
+                <CollapseTitle onClick={() => console.log('theme')}>
+                  <ML language="en">Theme</ML>
+                  <ML language="es">Tema</ML>
+                </CollapseTitle>
+              </Collapse>
+              
             </DropdownItem>
           </Dropdown>
         </li>
