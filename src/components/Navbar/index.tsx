@@ -67,12 +67,8 @@ const Navbar = ({hide}: NavProps) => {
           </ML>
         </li>
         <li>
-          <ML language="en">
-            My work
-          </ML>
-          <ML language="es">
-            Mis trabajos
-          </ML>
+          <ML language="en">My Skills</ML>
+          <ML language="es">Mis Skills</ML>
         </li>
         <li>
           <ML language="en">

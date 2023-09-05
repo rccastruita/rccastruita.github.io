@@ -5,6 +5,7 @@ import useNavScrollEvents from '../hooks/useNavScrollEvents';
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Section, {SectionTitle, SectionContent} from "./Section";
+import ML from './MultiLanguage';
 
 import AboutImage from '../img/novicio_1.jpg';
 import style from './Main.module.css';
@@ -38,13 +39,23 @@ const Main = () => {
       <Navbar hide={hideNav} />
       <main className={style.main}>
         <Section>
-          <SectionTitle>About me</SectionTitle>
-          <img src={AboutImage} />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod dolor soluta dicta asperiores praesentium consectetur sit placeat sed necessitatibus recusandae in nulla optio animi at dolore, tempora quisquam quae.
+          <SectionTitle>
+            <ML language="en">About me</ML>
+            <ML language="es">Acerca de mí</ML>
+          </SectionTitle>
+          <SectionContent>
+            <div className={style.about}>
+              <img src={AboutImage} />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod dolor soluta dicta asperiores praesentium consectetur sit placeat sed necessitatibus recusandae in nulla optio animi at dolore, tempora quisquam quae.
+              </p>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta praesentium doloribus aspernatur molestiae pariatur, vitae atque maxime repellendus laudantium, odit qui earum suscipit nemo sunt numquam consectetur magni eos accusamus?
+              </p>
+            </div>
+          </SectionContent>
         </Section>
-        <Section>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio odio dolor non. Alias cumque ducimus pariatur blanditiis quisquam eaque sapiente facilis, inventore laboriosam corporis tenetur dolor nulla magnam quibusdam optio?
-        </Section>
+        
       </main>
     </div>
   );

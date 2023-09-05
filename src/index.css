@@ -36,6 +36,7 @@
   --sz-outline-width: 3px;
   --sz-menu-padding: 1rem;
   --sz-menu-item-height: 3rem;
+  --sz-title-margin: clamp(0.5rem, calc(15vw - 4rem), 4rem);
 }
 
 * {
@@ -45,8 +46,16 @@
   font-family: var(--fnt-family-primary);
 }
 
+html {
+  width: 100vw;
+}
+
 a, button {
   cursor: pointer !important;
+}
+
+p {
+  line-height: 1.3rem;
 }
 
 h1, h2, h3, h4, h5, h6 {

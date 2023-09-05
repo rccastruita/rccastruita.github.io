@@ -1,3 +1,9 @@
 .main img {
-  max-width: 100%;
+  max-width: min(100%, 30rem);
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+
+  margin-bottom: 1rem;
+}
+
+.about {
 }

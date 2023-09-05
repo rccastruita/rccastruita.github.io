@@ -17,15 +17,16 @@ const Section = ({children}: SectionProps) => {
 
 type ContentProps = {
   children: ReactNode;
+  className?: string;
 }
 export const SectionTitle = ({children}: ContentProps) => {
   return (
-    <h1>{children}</h1>
+    <h1 className={styles['section-title']}>{children}</h1>
   )
 };
-export const SectionContent = ({children}: ContentProps) => {
+export const SectionContent = ({children, className}: ContentProps) => {
   return (
-    <div>
+    <div className={`${styles['section-content']} ${className}`}>
       {children}
     </div>
   )

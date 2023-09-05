@@ -1,3 +1,20 @@
 .section {
   padding-bottom: 10rem;
 }
+
+.section-title, .section p {
+  margin-inline: var(--sz-title-margin);
+}
+
+.section-title {
+  --title-font-size: clamp(1.5rem, 9vmin, 3rem);
+
+  /*margin-left: var(--sz-title-margin);*/
+  margin-top: var(--sz-title-margin);
+  font-size: var(--title-font-size);
+}
+
+.section-content p {
+  max-width: 45ch;
+  margin-bottom: 1rem;
+}
