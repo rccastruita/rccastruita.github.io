@@ -30,7 +30,7 @@ export const CollapseTitle = ( {children, onClick}: CollapseTitleProps ) => {
 type CollapseContentProps = {
   children: ReactNode;
   maxHeight?: string;
-  hidden?: boolean;
+  hidden: boolean;
 };
 
 export const CollapseContent = ( {children, maxHeight, hidden}: CollapseContentProps ) => {

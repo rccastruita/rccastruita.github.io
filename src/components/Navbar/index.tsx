@@ -7,9 +7,10 @@ import Dropdown, {
 } from '../Dropdown';
 import ML from '../MultiLanguage';
 
-import { LanguageKey } from '../../types';
+import { LanguageKey, Theme } from '../../types';
 
 import styles from './Navbar.module.css';
+import ThemesDict from '../../themes';
 
 type NavProps = {
   hide: boolean;
@@ -19,6 +20,8 @@ const Navbar = ({hide}: NavProps) => {
   const [dropdownStatus, setDropdownStatus] = useState(DropdownStatus.Hidden);
   const [currentLanguage, setLanguage] = useLanguage();
   const [languageCollapsed, setLanguageCollapsed] = useState(true);
+  const [themeCollapsed, setThemeCollapsed] = useState(true);
+  const [currentTheme, setTheme] = useState(Theme.Default);
 
   useEffect(() => {
     // Hide the dropdown menu when showing the nav
@@ -27,6 +30,24 @@ const Navbar = ({hide}: NavProps) => {
       setDropdownStatus(DropdownStatus.Hidden);
     }
   }, [hide]);
+
+  const changeTheme = (newTheme: Theme) => {
+    if (newTheme === currentTheme) {
+      return;
+    }
+
+    const aux = ThemesDict.find((i) => i.id === newTheme);
+    if (aux === undefined) {
+      return;
+    }
+    
+    for (const [key, value] of Object.entries(aux.values)) {
+      document.documentElement.style.setProperty(key, value);
+    }
+
+    setTheme(newTheme);
+
+  };
 
   const handleMenuClick = () => {
     switch(dropdownStatus) {
@@ -111,10 +132,16 @@ const Navbar = ({hide}: NavProps) => {
                   <DropdownButton onClick={() => changeLanguage('en')}>
                     <ML language="en">English</ML>
                     <ML language="es">Inglés</ML>
+                    { currentLanguage === 'en' && 
+                    <span className={`material-symbols-outlined ${styles['language-check']}`}>done</span>
+                    }
                   </DropdownButton>
                   <DropdownButton onClick={() => changeLanguage('es')}>
                     <ML language="en">Spanish</ML>
                     <ML language="es">Español</ML>
+                    { currentLanguage === 'es' && 
+                    <span className={`material-symbols-outlined ${styles['language-check']}`}>done</span>
+                    }
                   </DropdownButton>
                 </CollapseContent>
               </Collapse>
@@ -123,12 +150,26 @@ const Navbar = ({hide}: NavProps) => {
 
             <DropdownItem>
               <Collapse>
-                <CollapseTitle onClick={() => console.log('theme')}>
+                <CollapseTitle onClick={() => setThemeCollapsed(!themeCollapsed)}>
                   <ML language="en">Theme</ML>
                   <ML language="es">Tema</ML>
                 </CollapseTitle>
+                <CollapseContent maxHeight="7rem" hidden={themeCollapsed}>
+                  <DropdownButton onClick={() => changeTheme(Theme.Default)}>
+                    Default
+                    { currentTheme === Theme.Default && 
+                    <span className={`material-symbols-outlined ${styles['language-check']}`}>done</span>
+                    }
+                  </DropdownButton>
+                  <DropdownButton onClick={() => changeTheme(Theme.Dark)}>
+                    <ML language="en">Dark</ML>
+                    <ML language="es">Oscuro</ML>
+                    { currentTheme === Theme.Dark && 
+                    <span className={`material-symbols-outlined ${styles['language-check']}`}>done</span>
+                    }
+                  </DropdownButton>
+                </CollapseContent>
               </Collapse>
-              
             </DropdownItem>
           </Dropdown>
         </li>

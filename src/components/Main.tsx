@@ -55,7 +55,17 @@ const Main = () => {
             </div>
           </SectionContent>
         </Section>
-        
+        <Section>
+          <SectionTitle>
+            <ML language="en">Contact</ML>
+            <ML language="es">Contacto</ML>
+          </SectionTitle>
+          <SectionContent>
+            <h2>Email</h2>
+            <p>rccastruita@gmail.com</p>
+            
+          </SectionContent>
+        </Section>
       </main>
     </div>
   );
