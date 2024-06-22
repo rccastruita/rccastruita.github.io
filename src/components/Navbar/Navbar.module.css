@@ -15,6 +15,23 @@
   z-index: 10;
 }
 
+@media screen and (width > 480px) {
+  .navigation {
+    top: 0;
+    bottom: initial !important;
+  }
+
+  .navigation.navigation--hidden {
+    top: calc(-1 * (2*var(--nav-padding) + var(--nav-fnt-sz) + 2*var(--nav-border-width) + 2px));
+    bottom: initial !important;
+  }
+
+  .navigation__dropdown {
+    top: 100%;
+    bottom: unset !important;
+  }
+}
+
 .navigation.navigation--hidden {
   bottom: calc(-1 * (2*var(--nav-padding) + var(--nav-fnt-sz) + 2*var(--nav-border-width) + 2px));
   opacity: 0;

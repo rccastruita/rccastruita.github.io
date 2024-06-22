@@ -2,7 +2,7 @@
 }
 
 .main img {
-  max-width: min(100%, 30rem);
+  width: min(100%, var(--sz-mobile-width-1));
   clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
 
   margin-bottom: 1rem;

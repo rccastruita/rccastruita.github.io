@@ -18,10 +18,16 @@
   left: 6%;
 }
 
+@media screen and (width > 480px) {
+  .title {
+    top: 16%;
+  }
+}
+
 .subtitle {
   color: var(--clr-text-heading);
   position: absolute;
-  top: 40%;
+  top: 45%;
   font-size: 5vmin;
   /*max-width: 15ch;*/
   right: 6%;
@@ -39,8 +45,14 @@
 
   position: absolute;
   margin: auto;
-  bottom: 12vh;
+  bottom: 12svh;
   left: 0;
   right: 0;
 
+}
+
+@media screen and (width > 480px) {
+  .button-group {
+    bottom: 6svh;
+  }
 }

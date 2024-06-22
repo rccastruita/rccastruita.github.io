@@ -1,4 +1,4 @@
-import { useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 
 import useLanguage from '../../hooks/useLanguage';
 import Collapse, { CollapseContent, CollapseTitle } from '../Collapse';
@@ -108,7 +108,7 @@ const Navbar = ({hide}: NavProps) => {
               }
             </span>
           </NavButton>
-          <Dropdown top left status={dropdownStatus}>
+          <Dropdown top left status={dropdownStatus} className={styles.navigation__dropdown}>
             <DropdownAnchor>
               <ML language="en">About me</ML>
               <ML language="es">Sobre mí</ML>

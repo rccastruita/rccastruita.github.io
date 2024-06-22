@@ -23,7 +23,7 @@
 }
 
 .dropdown.dropdown--active {
-  animation: forwards var(--tm-dropdown-duration) show_dropdown linear !important;
+  animation: var(--tm-dropdown-duration) show_dropdown linear !important;
 }
 
 .dropdown.dropdown--toggled {

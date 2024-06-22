@@ -5,6 +5,9 @@
 }
 
 :root {
+  /* Responsive values */
+  --sz-mobile-width-1: 480px;
+
   /* Theme 1 */
   --clr-primary-400: hsl(228 100% 44%);
   --clr-primary-800: hsl(228 100% 22%);
@@ -73,7 +76,6 @@
 }
 
 html {
-  width: 100vw;
   background-color: var(--clr-main-background-400);
   color: var(--clr-text-primary);
 }
