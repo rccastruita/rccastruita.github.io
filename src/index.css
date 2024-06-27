@@ -9,6 +9,7 @@
   --sz-mobile-width-1: 480px;
 
   /* Theme 1 */
+  --clr-primary-200: hsl(228 100% 56%);
   --clr-primary-400: hsl(228 100% 44%);
   --clr-primary-800: hsl(228 100% 22%);
   --clr-primary-900: hsl(228 100% 15%);
@@ -32,36 +33,11 @@
   --clr-text-primary: black;
   --clr-text-secondary: white;
 
-  /* Theme 2 ------------------------------------------------------------ 
-  --clr-primary-400: hsl(190, 90%, 10%);
-  --clr-primary-800: hsl(228 100% 22%);
-  --clr-primary-900: hsl(228 100% 15%);
-  
-  --clr-secondary-600: hsl(190 77% 25%);
-  --clr-secondary-400: hsl(190 77% 15%);
-  --clr-secondary-200: hsl(190 77% 10%);
-
-  --clr-tertiary-400: hsl(258 100% 44%);
-  --clr-tertiary-clear-400: hsl(0, 0%, 19%);
-
-  --clr-neutral-600: hsl(0 0% 30%);
-  --clr-neutral-600: #4d4d4d;
-
-  --clr-main-background-400: hsl(214 32% 13%);
-  --clr-accent-400: white;
-
-  --clr-nav-primary: var(--clr-secondary-400);
-  --clr-nav-secondary: white;
-
-  --clr-text-heading: hsl(45 100% 100%);
-  --clr-text-primary: white;
-  --clr-text-secondary: black;
-
-  /* ---------------------------------------------------- Theme 2 */
   --fnt-family-primary: 'Inter', sans-serif;
 
   --tm-button-transition: 100ms;
 
+  --sz-max-paragraph-width: 55ch;
   --sz-outline-width: 3px;
   --sz-menu-padding: 1rem;
   --sz-menu-item-height: 3rem;

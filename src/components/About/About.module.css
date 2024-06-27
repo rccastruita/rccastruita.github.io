@@ -1,0 +1,81 @@
+.picture {
+  --img: url('../../img/foro_2.jpeg');
+  --rotation: 15deg;
+
+  
+  aspect-ratio: 4 / 3;
+  position: relative;
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  overflow: hidden;
+}
+
+.picture__wrapper {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.picture::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background: var(--img) center 20% / cover;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media screen and (width > 600px) {
+  .flex {
+    flex-direction: row-reverse;
+    margin-left: var(--sz-title-margin);
+    margin-top: 1rem;
+  }
+
+  .picture {
+    /*clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);*/
+    /*clip-path: rect(0 0 100% 100% round 25%);*/
+    clip-path: none;
+    border-radius: 25%;
+    aspect-ratio: 1;
+    rotate: var(--rotation);
+    height: 71%;
+    width: auto;
+    margin-inline: auto;
+  }
+
+  .picture::before {
+    /*inset: -12.3%;*/
+    inset: -11%;
+    background-position: center top;
+    rotate: calc(0deg - var(--rotation));
+  }
+
+  .picture__wrapper {
+    margin-bottom: 0;
+    height: min(30rem, 40vmax);
+    align-content: center;
+    width: auto;
+    flex-basis: 45%;
+  }
+
+  .flex__text {
+    align-content: center;
+    flex-basis: 50%;
+  }
+
+  .flex__text p {
+    margin-inline: 0;
+  }
+
+}
+
+@keyframes rotatePicture {
+  to {
+    transform: rotate(360deg);
+  }
+}

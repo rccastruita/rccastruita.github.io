@@ -33,6 +33,7 @@ const Navbar = ({hide}: NavProps) => {
 
   const changeTheme = (newTheme: Theme) => {
     if (newTheme === currentTheme) {
+      setThemeCollapsed(true);
       return;
     }
 
@@ -46,7 +47,7 @@ const Navbar = ({hide}: NavProps) => {
     }
 
     setTheme(newTheme);
-
+    setThemeCollapsed(true);
   };
 
   const handleMenuClick = () => {
@@ -65,6 +66,7 @@ const Navbar = ({hide}: NavProps) => {
     if( key !== currentLanguage ) {
       setLanguage(key);
     }
+    setLanguageCollapsed(true);
   };
 
   const toggleLanguageCollapsed = () => {
