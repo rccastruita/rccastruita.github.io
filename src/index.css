@@ -32,6 +32,7 @@
   --clr-text-heading: hsl(45 100% 100%);
   --clr-text-primary: black;
   --clr-text-secondary: white;
+  --clr-text-tertirary: white;
 
   --fnt-family-primary: 'Inter', sans-serif;
 
@@ -42,6 +43,10 @@
   --sz-menu-padding: 1rem;
   --sz-menu-item-height: 3rem;
   --sz-title-margin: clamp(0.5rem, calc(15vw - 4rem), 4rem);
+
+  /* Icons */
+  --clr-automation-fill: white;
+  --clr-frontend-circle: none;
 }
 
 * {

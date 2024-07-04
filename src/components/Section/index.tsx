@@ -12,33 +12,29 @@ export enum SectionStyle {
 
 type SectionProps = {
   children: ReactNode;
-  sectionStyle?: SectionStyle;
-  /*title: string;*/
+  Primary?: boolean;
+  Secondary?: boolean;
+  Tertiary?: boolean;
+  White?: boolean;
+  Black?: boolean;
 }
 
-const Section = ({children, sectionStyle}: SectionProps) => {
+const Section = (props: SectionProps) => {
   let type;
-  switch (sectionStyle) {
-    case SectionStyle.Primary:
-      type = styles['section--primary'];
-      break;
-    case SectionStyle.Secondary:
-      type = styles['section--secondary'];
-      break;
-    case SectionStyle.Tertiary:
-      type = styles['section--tertiary'];
-      break;
-    case SectionStyle.Black:
-      type = styles['section--black'];
-      break;
-    case SectionStyle.White:
-    default:
-      type = styles['section--white'];
-      break;
-  }
+  if(props.Primary)
+    type = styles['section--primary'];
+  else if (props.Secondary)
+    type = styles['section--secondary'];
+  else if (props.Tertiary)
+    type = styles['section--tertiary'];
+  else if (props.Black)
+    type = styles['section--black'];
+  else
+    type = styles['section--white'];
+
   return (
     <section className={`${styles.section} ${type}`}>
-      {children}
+      {props.children}
     </section>
   );
 };

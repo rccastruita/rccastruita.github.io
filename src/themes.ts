@@ -4,6 +4,7 @@ const Themes: ThemeValues[] = [
   {
     id: Theme.Default,
     values: {
+      '--clr-primary-200': 'hsl(228 100% 56%)',
       '--clr-primary-400': 'hsl(228 100% 44%)',
       '--clr-primary-800': 'hsl(228 100% 22%)',
       '--clr-primary-900': 'hsl(228 100% 15%)',
@@ -26,11 +27,16 @@ const Themes: ThemeValues[] = [
       '--clr-text-heading': 'hsl(45 100% 100%)',
       '--clr-text-primary': 'black',
       '--clr-text-secondary': 'white',
+      '--clr-text-tertiary': 'white',
+
+      '--clr-automation-fill': 'white',
+      '--clr-frontend-circle': 'none',
     }
   },
   {
     id: Theme.Dark,
     values: {
+      '--clr-primary-200': 'hsl(228 100% 56%)',
       '--clr-primary-400': 'hsl(190, 90%, 10%)',
       '--clr-primary-800': 'hsl(228 100% 22%)',
       '--clr-primary-900': 'hsl(228 100% 15%)',
@@ -53,6 +59,10 @@ const Themes: ThemeValues[] = [
       '--clr-text-heading': 'hsl(45 100% 100%)',
       '--clr-text-primary': 'white',
       '--clr-text-secondary': 'black',
+      '--clr-text-tertiary': 'white',
+
+      '--clr-automation-fill': 'white',
+      '--clr-frontend-circle': 'none',
     }
   }
 ];

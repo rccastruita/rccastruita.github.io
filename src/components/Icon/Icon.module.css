@@ -1,0 +1,18 @@
+.icon {
+}
+
+.icon svg {
+}
+
+#testing-container {
+  
+}
+
+.automation * {
+  fill: var(--clr-automation-fill);
+}
+
+.frontend circle {
+  fill-opacity: 1;
+  fill: var(--clr-frontend-circle);
+}

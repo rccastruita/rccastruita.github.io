@@ -18,6 +18,7 @@ export enum Theme {
 export type ThemeValues = {
   id: number;
   values: {
+    '--clr-primary-200': string;
     '--clr-primary-400': string;
     '--clr-primary-800': string;
     '--clr-primary-900': string;
@@ -40,5 +41,9 @@ export type ThemeValues = {
     '--clr-text-heading': string;
     '--clr-text-primary': string;
     '--clr-text-secondary': string;
+    '--clr-text-tertiary': string;
+
+    '--clr-automation-fill': string;
+    '--clr-frontend-circle': string;
   };
 };
